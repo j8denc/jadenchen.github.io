@@ -1,0 +1,904 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+.ps {
+  overflow: hidden !important;
+  overflow-anchor: none;
+  -ms-overflow-style: none;
+  touch-action: auto;
+  -ms-touch-action: auto;
+}
+
+.ps__rail-x,
+.ps__rail-y {
+  display: none !important;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  background: white;
+  font-family: sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  width: 100vw;
+  overflow: hidden;
+}
+
+.screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 85vw;
+  width: 92vw;
+  height: 100vh;
+  pointer-events: none;
+  margin-left: 4vw;
+}
+
+.screen .wrapper-3d {
+  position: relative;
+  perspective: 250px;
+  transform-style: preserve-3d;
+}
+
+.screen .wrapper-3d .fold {
+  overflow: hidden;
+  width: 100%;
+  height: 80vh;
+  will-change: transform;
+}
+
+.screen .wrapper-3d .fold .fold-size-fix {
+  transform-origin: center center;
+  transform: scaleY(0.998);
+}
+
+.screen .wrapper-3d .fold .fold-size-fix .fold-scroller {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.screen .wrapper-3d .fold-before {
+  position: absolute;
+  transform-origin: bottom center;
+  transform: translateZ(0px) translate3d(0, -80vh, 0) rotateX(-120deg) scale3d(1, 1.002, 1);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.screen .wrapper-3d .fold-before .fold-scroller {
+  transform: translateY(100%);
+}
+
+.screen .wrapper-3d .fold-center {
+  transform-origin: center center;
+  transform: translateZ(0px) translate3d(0, 0, 0) rotateX(0) scale3d(1, 1.002, 1);
+}
+
+.screen .wrapper-3d .fold-after {
+  position: absolute;
+  transform-origin: top center;
+  transform: translateZ(0px) translate3d(0, 80vh, 0) rotateX(120deg) scale3d(1, 1.002, 1);
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.screen .wrapper-3d .fold-after .fold-scroller {
+  transform: translateY(-100%);
+}
+
+.screen .wrapper-3d .fold-before .fold-size-fix {
+  transform-origin: bottom center;
+}
+
+.screen .wrapper-3d .fold-after .fold-size-fix {
+  transform-origin: top center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 85vw;
+  position: relative;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.content .fold-content {
+  pointer-events: all;
+}
+
+.content .fold-size-fix {
+  width: 100%;
+  height: 100%;
+}
+
+.content .fold-size-fix .fold-scroller {
+  height: 100%;
+}
+
+#base-content {
+  display: block;
+  opacity: 0;
+  width: 100%;
+}
+
+.signup,
+a,
+button,
+h1,
+h2,
+input,
+p,
+span {
+  color: black;
+  margin: 0;
+  padding: 0;
+  font-size: 3.25vw;
+  line-height: 3.25vw;
+  margin: 0 1px 9.75vw;
+  margin: 0 1px 3.25vw;
+  font-weight: normal;
+}
+
+button {
+  margin: 0 1px;
+}
+
+a,
+a:hover,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover,
+button:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  border: none;
+}
+
+p {
+  display: inline-block;
+  width: 100%;
+}
+
+p.newsletter {
+  margin: 0 1px;
+}
+
+.wrap {
+  margin-bottom: 6.2vw;
+  padding: 1vw;
+}
+
+.newsletterblock {
+  margin: 0 1px 9.75vw;
+}
+
+.response {
+  margin: 0 1px 9.75vw;
+}
+
+.kaomoji {
+  white-space: nowrap;
+}
+
+.subscribe {
+  margin-top: 1.5vw;
+  width: 100%;
+  position: relative;
+}
+
+.subscribe .signup {
+  width: 95%;
+  border-bottom: 0.35vw solid white;
+  display: inline-block;
+}
+
+.subscribe .su {
+  float: right;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-bottom: 2vw solid floralwhite;
+}
+
+.signup {
+  pointer-events: none;
+  margin-bottom: 3.25vw;
+}
+
+input {
+  width: 95%;
+  margin: 0 1px 3.25vw;
+  border: none;
+  border-bottom: 0.35vw solid white;
+  box-shadow: none;
+  display: inline-block;
+  background: transparent;
+  color: white;
+  cursor: text;
+  box-sizing: border-box;
+}
+
+.response {
+  margin: 0 1px 1.75vw;
+}
+
+::placeholder {
+  color: white;
+  opacity: 1;
+  padding: 1px 1px 1vw;
+}
+
+:required {
+  box-shadow: none;
+}
+
+:invalid {
+  box-shadow: none;
+}
+
+.cursor {
+  position: relative;
+  display: inline-block;
+}
+
+.cursor i {
+  position: absolute;
+  width: 1px;
+  height: 9vw;
+  background-color: white;
+  left: 0.75vw;
+  top: 13%;
+  animation-name: blink;
+  animation-duration: 800ms;
+  animation-iteration-count: infinite;
+  opacity: 1;
+  color: white;
+  margin: 0;
+  padding: 0;
+  font-size: 3.25vw;
+  line-height: 3.25vw;
+  font-style: normal;
+}
+
+.cursor.focus i.first {
+  display: none;
+}
+
+.masterinput {
+  position: fixed;
+  top: -20vw;
+  left: -20vw;
+  z-index: 10000000;
+  opacity: 1;
+  caret-color: transparent;
+}
+
+img {
+  width: 97.75vw;
+}
+
+.slider {
+  position: relative;
+}
+
+.slider img {
+  width: 90vw;
+  height: auto;
+  cursor: pointer;
+}
+
+.slider img.portrait {
+  height: 55.25vw;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.slider p {
+  position: absolute;
+  text-align: left;
+  top: 0;
+  left: 0;
+  margin: 0;
+  pointer-events: none;
+}
+
+.caption {
+  font-size: calc(3.25vw/2);
+  line-height: calc(3.25vw/2);
+  margin-bottom: 9.75vw;
+  margin-top: .5vw;
+}
+
+.logos.face circle,
+.logos.inst circle,
+.logos.inst path,
+.social.face circle,
+.social.inst circle,
+.social.inst path {
+  fill: white;
+}
+
+.logos.face path,
+.social.face path {
+  fill: white;
+}
+
+.wrappi .logos, .wrappi figure, .sponsors .logos, .sponsors figure {
+  height: 8vw;
+  display: inline-block;
+  margin-bottom: 1vw;
+  margin-right: 2vw;
+  vertical-align: middle;
+}
+
+.wrappi .logos a, .wrappi figure a, .sponsors .logos a, .sponsors figure a {
+  display: inline-block;
+}
+
+.wrappi .logos.h8, .wrappi figure.h8, .sponsors .logos.h8, .sponsors figure.h8 {
+  height: 8vw;
+}
+
+.wrappi .logos.h6, .wrappi figure.h6, .sponsors .logos.h6, .sponsors figure.h6 {
+  height: 6vw;
+}
+
+.wrappi .logos.h4, .wrappi figure.h4, .sponsors .logos.h4, .sponsors figure.h4 {
+  height: 4vw;
+}
+
+.wrappi .logos svg, .wrappi .logos img, .wrappi figure svg, .wrappi figure img, .sponsors .logos svg, .sponsors .logos img, .sponsors figure svg, .sponsors figure img {
+  height: 100%;
+}
+
+.wrappi .logos svg g,
+.wrappi .logos svg line,
+.wrappi .logos svg path, .wrappi .logos img g,
+.wrappi .logos img line,
+.wrappi .logos img path, .wrappi figure svg g,
+.wrappi figure svg line,
+.wrappi figure svg path, .wrappi figure img g,
+.wrappi figure img line,
+.wrappi figure img path, .sponsors .logos svg g,
+.sponsors .logos svg line,
+.sponsors .logos svg path, .sponsors .logos img g,
+.sponsors .logos img line,
+.sponsors .logos img path, .sponsors figure svg g,
+.sponsors figure svg line,
+.sponsors figure svg path, .sponsors figure img g,
+.sponsors figure img line,
+.sponsors figure img path {
+  fill: white;
+  stroke: white;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:hover,
+select:-webkit-autofill,
+select:-webkit-autofill:focus,
+select:-webkit-autofill:hover,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:hover {
+  border: none !important;
+  -webkit-text-fill-color: white !important;
+  -webkit-box-shadow: none !important;
+  background-image: none !important;
+  background-color: floralwhite; !important;
+  color: white !important;
+}
+
+#caret {
+  border-right: 1px solid white;
+  margin-right: -1px;
+  animation: blink-animation 1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
+.slider img {
+  display: none;
+}
+
+.slider img.show {
+  display: block;
+}
+
+nav {
+  position: fixed;
+  z-index: 9999;
+  right: 0;
+  top: 0;
+  padding: 3.25vw;
+  cursor: pointer;
+  user-select: none;
+}
+
+nav span {
+  font-size: 3.25vw;
+  line-height: 3.25vw;
+  font-weight: normal;
+}
+
+nav ul {
+  display: none;
+}
+
+nav ul.active {
+  display: block;
+}
+
+nav ul li a.internal,
+nav ul li a.language {
+  font-weight: normal;
+  cursor: pointer;
+}
+
+nav ul li a.internal.active,
+nav ul li a.language.active {
+  text-decoration: underline;
+}
+
+nav a {
+  color: floralwhite;
+  margin: 0 2vw 0 0;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.timetable, .legal {
+  margin-bottom: 9.75vw;
+}
+
+.timetable span, .timetable p, .legal span, .legal p {
+  margin-bottom: 0;
+  margin-bottom: 3.25vw;
+}
+
+.timetable .event, .legal .event {
+  margin-bottom: 3.25vw;
+}
+
+.event .showmore {
+  margin-top: -3.25vw;
+  margin-bottom: 6.5vw;
+}
+
+.event .title {
+  margin-bottom: 1.75vw;
+}
+
+.legal h1, .legal h2 {
+  margin-bottom: 0;
+  margin-top: 3.25vw;
+  margin-bottom: 1.625vw;
+}
+
+.legal > h2:first-of-type {
+  margin-top: 0;
+}
+
+.social {
+  margin-top: 9.75vw;
+}
+
+.sponsors {
+  margin: 0 0 9.75vw;
+}
+
+.outline,
+.internal,
+.language {
+  text-shadow: 2px 2px 0 chartreuse, 2px -2px 0 chartreuse, -2px 2px 0 chartreuse, -2px -2px 0 chartreuse, 2px 0 0 chartreuse, 0 2px 0 chartreuse, -2px 0 0 chartreuse, 0 -2px 0 chartreuse;
+}
+
+nav span {
+  color: chartreuse;
+  text-shadow: 1px 1px 0 white, 1px -1px 0 white, -1px 1px 0 white, -1px -1px 0 white, 1px 0 0 white, 0 1px 0 white, -1px 0 0 white, 0 -1px 0 white;
+}
+
+nav ul li a.internal,
+nav ul li a.language {
+  color: chartreuse;
+  text-shadow: 1px 1px 0 white, 1px -1px 0 white, -1px 1px 0 white, -1px -1px 0 white, 1px 0 0 white, 0 1px 0 white, -1px 0 0 white, 0 -1px 0 white;
+}
+
+body[ndx--target-view*="2020"],
+body.color {
+  background: orangered;
+}
+
+body[ndx--target-view*="2020"] ::placeholder,
+body.color ::placeholder {
+  color: chartreuse;
+}
+
+body[ndx--target-view*="2020"] .cursor i,
+body.color .cursor i {
+  color: chartreuse;
+  background: chartreuse;
+}
+
+body[ndx--target-view*="2020"] .signup,
+body[ndx--target-view*="2020"] a,
+body[ndx--target-view*="2020"] button,
+body[ndx--target-view*="2020"] h1,
+body[ndx--target-view*="2020"] h2,
+body[ndx--target-view*="2020"] input,
+body[ndx--target-view*="2020"] p,
+body[ndx--target-view*="2020"] span,
+body.color .signup,
+body.color a,
+body.color button,
+body.color h1,
+body.color h2,
+body.color input,
+body.color p,
+body.color span {
+  color: chartreuse;
+}
+
+body[ndx--target-view*="2020"] .social.face circle,
+body[ndx--target-view*="2020"] .social.inst circle,
+body[ndx--target-view*="2020"] .social.inst path,
+body.color .social.face circle,
+body.color .social.inst circle,
+body.color .social.inst path {
+  fill: chartreuse;
+}
+
+body[ndx--target-view*="2020"] .social.face path,
+body.color .social.face path {
+  fill: orangered;
+}
+
+body[ndx--target-view*="2020"] #caret,
+body.color #caret {
+  border-right: 1px solid chartreuse;
+}
+
+body[ndx--target-view*="2020"] .subscribe .signup,
+body.color .subscribe .signup {
+  border-bottom: 0.35vw solid chartreuse;
+}
+
+body[ndx--target-view*="2020"] .subscribe .su,
+body.color .subscribe .su {
+  border-bottom: 2vw solid orangered;
+}
+
+body[ndx--target-view*="2020"] input,
+body.color input {
+  border-bottom: 0.35vw solid chartreuse;
+  color: chartreuse;
+}
+
+body[ndx--target-view*="2020"] .sponsors .logos svg g,
+body[ndx--target-view*="2020"] .sponsors .logos svg line,
+body[ndx--target-view*="2020"] .sponsors .logos svg path,
+body.color .sponsors .logos svg g,
+body.color .sponsors .logos svg line,
+body.color .sponsors .logos svg path {
+  fill: chartreuse;
+  stroke: chartreuse;
+}
+
+body[ndx--target-view*="2020"] input:-webkit-autofill,
+body[ndx--target-view*="2020"] input:-webkit-autofill:focus,
+body[ndx--target-view*="2020"] input:-webkit-autofill:hover,
+body[ndx--target-view*="2020"] select:-webkit-autofill,
+body[ndx--target-view*="2020"] select:-webkit-autofill:focus,
+body[ndx--target-view*="2020"] select:-webkit-autofill:hover,
+body[ndx--target-view*="2020"] textarea:-webkit-autofill,
+body[ndx--target-view*="2020"] textarea:-webkit-autofill:focus,
+body[ndx--target-view*="2020"] textarea:-webkit-autofill:hover,
+body.color input:-webkit-autofill,
+body.color input:-webkit-autofill:focus,
+body.color input:-webkit-autofill:hover,
+body.color select:-webkit-autofill,
+body.color select:-webkit-autofill:focus,
+body.color select:-webkit-autofill:hover,
+body.color textarea:-webkit-autofill,
+body.color textarea:-webkit-autofill:focus,
+body.color textarea:-webkit-autofill:hover {
+  border: none !important;
+  -webkit-text-fill-color: chartreuse !important;
+  -webkit-box-shadow: none !important;
+  background-image: none !important;
+  background-color: orangered !important;
+  color: chartreuse !important;
+}
+
+body[ndx--target-view*="2020"] nav a,
+body.color nav a {
+  color: orangered;
+}
+
+body[ndx--target-view*="2020"] .outline,
+body[ndx--target-view*="2020"] .internal,
+body[ndx--target-view*="2020"] .language,
+body.color .outline,
+body.color .internal,
+body.color .language {
+  text-shadow: 2px 2px 0 #e599f7, 2px -2px 0 #e599f7, -2px 2px 0 #e599f7, -2px -2px 0 #e599f7, 2px 0 0 #e599f7, 0 2px 0 #e599f7, -2px 0 0 #e599f7, 0 -2px 0 #e599f7;
+}
+
+body[ndx--target-view*="2020"] nav span,
+body.color nav span {
+  color: #e599f7;
+  text-shadow: 2px 2px 0 chartreuse, 2px -2px 0 chartreuse, -2px 2px 0 chartreuse, -2px -2px 0 chartreuse, 2px 0 0 chartreuse, 0 2px 0 chartreuse, -2px 0 0 chartreuse, 0 -2px 0 chartreuse;
+}
+
+body[ndx--target-view*="2020"] nav ul li a.internal,
+body[ndx--target-view*="2020"] nav ul li a.language,
+body.color nav ul li a.internal,
+body.color nav ul li a.language {
+  color: #e599f7;
+  text-shadow: 2px 2px 0 chartreuse, 2px -2px 0 chartreuse, -2px 2px 0 chartreuse, -2px -2px 0 chartreuse, 2px 0 0 chartreuse, 0 2px 0 chartreuse, -2px 0 0 chartreuse, 0 -2px 0 chartreuse;
+}
+
+body[ndx--target-view*="artists"],
+body[ndx--target-view*="legal"],
+body.candy {
+  background: #95e7f6;
+}
+
+body[ndx--target-view*="artists"] ::placeholder,
+body[ndx--target-view*="legal"] ::placeholder,
+body.candy ::placeholder {
+  color: #e599f7;
+}
+
+body[ndx--target-view*="artists"] .cursor i,
+body[ndx--target-view*="legal"] .cursor i,
+body.candy .cursor i {
+  color: #e599f7;
+  background: #e599f7;
+}
+
+body[ndx--target-view*="artists"] .signup,
+body[ndx--target-view*="artists"] a,
+body[ndx--target-view*="artists"] button,
+body[ndx--target-view*="artists"] h1,
+body[ndx--target-view*="artists"] h2,
+body[ndx--target-view*="artists"] input,
+body[ndx--target-view*="artists"] p,
+body[ndx--target-view*="artists"] span,
+body[ndx--target-view*="legal"] .signup,
+body[ndx--target-view*="legal"] a,
+body[ndx--target-view*="legal"] button,
+body[ndx--target-view*="legal"] h1,
+body[ndx--target-view*="legal"] h2,
+body[ndx--target-view*="legal"] input,
+body[ndx--target-view*="legal"] p,
+body[ndx--target-view*="legal"] span,
+body.candy .signup,
+body.candy a,
+body.candy button,
+body.candy h1,
+body.candy h2,
+body.candy input,
+body.candy p,
+body.candy span {
+  color: #e599f7;
+}
+
+body[ndx--target-view*="artists"] .social.face circle,
+body[ndx--target-view*="artists"] .social.inst circle,
+body[ndx--target-view*="artists"] .social.inst path,
+body[ndx--target-view*="legal"] .social.face circle,
+body[ndx--target-view*="legal"] .social.inst circle,
+body[ndx--target-view*="legal"] .social.inst path,
+body.candy .social.face circle,
+body.candy .social.inst circle,
+body.candy .social.inst path {
+  fill: #e599f7;
+}
+
+body[ndx--target-view*="artists"] .social.face path,
+body[ndx--target-view*="legal"] .social.face path,
+body.candy .social.face path {
+  fill: #95e7f6;
+}
+
+body[ndx--target-view*="artists"] #caret,
+body[ndx--target-view*="legal"] #caret,
+body.candy #caret {
+  border-right: 1px solid #e599f7;
+}
+
+body[ndx--target-view*="artists"] .subscribe .signup,
+body[ndx--target-view*="legal"] .subscribe .signup,
+body.candy .subscribe .signup {
+  border-bottom: 0.35vw solid #e599f7;
+}
+
+body[ndx--target-view*="artists"] .subscribe .su,
+body[ndx--target-view*="legal"] .subscribe .su,
+body.candy .subscribe .su {
+  border-bottom: 2vw solid #95e7f6;
+}
+
+body[ndx--target-view*="artists"] input,
+body[ndx--target-view*="legal"] input,
+body.candy input {
+  border-bottom: 0.35vw solid #e599f7;
+  color: #e599f7;
+}
+
+body[ndx--target-view*="artists"] .sponsors .logos svg g,
+body[ndx--target-view*="artists"] .sponsors .logos svg line,
+body[ndx--target-view*="artists"] .sponsors .logos svg path,
+body[ndx--target-view*="legal"] .sponsors .logos svg g,
+body[ndx--target-view*="legal"] .sponsors .logos svg line,
+body[ndx--target-view*="legal"] .sponsors .logos svg path,
+body.candy .sponsors .logos svg g,
+body.candy .sponsors .logos svg line,
+body.candy .sponsors .logos svg path {
+  fill: #e599f7;
+  stroke: #e599f7;
+}
+
+body[ndx--target-view*="artists"] input:-webkit-autofill,
+body[ndx--target-view*="artists"] input:-webkit-autofill:focus,
+body[ndx--target-view*="artists"] input:-webkit-autofill:hover,
+body[ndx--target-view*="artists"] select:-webkit-autofill,
+body[ndx--target-view*="artists"] select:-webkit-autofill:focus,
+body[ndx--target-view*="artists"] select:-webkit-autofill:hover,
+body[ndx--target-view*="artists"] textarea:-webkit-autofill,
+body[ndx--target-view*="artists"] textarea:-webkit-autofill:focus,
+body[ndx--target-view*="artists"] textarea:-webkit-autofill:hover,
+body[ndx--target-view*="legal"] input:-webkit-autofill,
+body[ndx--target-view*="legal"] input:-webkit-autofill:focus,
+body[ndx--target-view*="legal"] input:-webkit-autofill:hover,
+body[ndx--target-view*="legal"] select:-webkit-autofill,
+body[ndx--target-view*="legal"] select:-webkit-autofill:focus,
+body[ndx--target-view*="legal"] select:-webkit-autofill:hover,
+body[ndx--target-view*="legal"] textarea:-webkit-autofill,
+body[ndx--target-view*="legal"] textarea:-webkit-autofill:focus,
+body[ndx--target-view*="legal"] textarea:-webkit-autofill:hover,
+body.candy input:-webkit-autofill,
+body.candy input:-webkit-autofill:focus,
+body.candy input:-webkit-autofill:hover,
+body.candy select:-webkit-autofill,
+body.candy select:-webkit-autofill:focus,
+body.candy select:-webkit-autofill:hover,
+body.candy textarea:-webkit-autofill,
+body.candy textarea:-webkit-autofill:focus,
+body.candy textarea:-webkit-autofill:hover {
+  border: none !important;
+  -webkit-text-fill-color: #e599f7 !important;
+  -webkit-box-shadow: none !important;
+  background-image: none !important;
+  background-color: #95e7f6 !important;
+  color: #e599f7 !important;
+}
+
+body[ndx--target-view*="artists"] nav a,
+body[ndx--target-view*="legal"] nav a,
+body.candy nav a {
+  color: #95e7f6;
+}
+
+body[ndx--target-view*="artists"] .outline,
+body[ndx--target-view*="artists"] .internal,
+body[ndx--target-view*="artists"] .language,
+body[ndx--target-view*="legal"] .outline,
+body[ndx--target-view*="legal"] .internal,
+body[ndx--target-view*="legal"] .language,
+body.candy .outline,
+body.candy .internal,
+body.candy .language {
+  text-shadow: 2px 2px 0 white, 2px -2px 0 white, -2px 2px 0 white, -2px -2px 0 white, 2px 0 0 white, 0 2px 0 white, -2px 0 0 white, 0 -2px 0 white;
+}
+
+body[ndx--target-view*="artists"] nav span,
+body[ndx--target-view*="legal"] nav span,
+body.candy nav span {
+  color: white;
+  text-shadow: 2px 2px 0 #e599f7, 2px -2px 0 #e599f7, -2px 2px 0 #e599f7, -2px -2px 0 #e599f7, 2px 0 0 #e599f7, 0 2px 0 #e599f7, -2px 0 0 #e599f7, 0 -2px 0 #e599f7;
+}
+
+body[ndx--target-view*="artists"] nav ul li a.internal,
+body[ndx--target-view*="artists"] nav ul li a.language,
+body[ndx--target-view*="legal"] nav ul li a.internal,
+body[ndx--target-view*="legal"] nav ul li a.language,
+body.candy nav ul li a.internal,
+body.candy nav ul li a.language {
+  color: white;
+  text-shadow: 2px 2px 0 #e599f7, 2px -2px 0 #e599f7, -2px 2px 0 #e599f7, -2px -2px 0 #e599f7, 2px 0 0 #e599f7, 0 2px 0 #e599f7, -2px 0 0 #e599f7, 0 -2px 0 #e599f7;
+}
+
+@media screen and (max-width: 1000px) {
+  .signup,
+  a,
+  button,
+  h1,
+  h2,
+  input,
+  p,
+  span,
+  .cursor i,
+  nav span,
+  nav ul li a.internal
+nav ul li a.language {
+    font-size: 5.25vw;
+    line-height: 5.25vw;
+  }
+  .caption {
+    font-size: 2.625vw;
+    line-height: 2.625vw;
+    margin-bottom: 9.75vw;
+    margin-top: .5vw;
+  }
+  .outline,
+  .internal,
+  .language {
+    text-shadow: 1px 1px 0 chartreuse, 1px -1px 0 chartreuse, -1px 1px 0 chartreuse, -1px -1px 0 chartreuse, 1px 0 0 chartreuse, 0 1px 0 chartreuse, -1px 0 0 chartreuse, 0 -1px 0 chartreuse;
+  }
+  .candy .outline,
+  .candy .internal,
+  .candy .language {
+    text-shadow: 1px 1px 0 white, 1px -1px 0 white, -1px 1px 0 white, -1px -1px 0 white, 1px 0 0 white, 0 1px 0 white, -1px 0 0 white, 0 -1px 0 white;
+  }
+  .color .outline,
+  .color .internal,
+  .color .language {
+    text-shadow: 1px 1px 0 #e599f7, 1px -1px 0 #e599f7, -1px 1px 0 #e599f7, -1px -1px 0 #e599f7, 1px 0 0 #e599f7, 0 1px 0 #e599f7, -1px 0 0 #e599f7, 0 -1px 0 #e599f7;
+  }
+}
