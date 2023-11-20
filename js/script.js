@@ -284,20 +284,3 @@ $(document).ready(function() {
     $('.fold').hide().show(0);
   })
 });
-
-this.canvas = document.createElement('canvas');
-this.canvas.width=32;
-this.canvas.height=32;
-this.ctx = this.canvas.getContext('2d');
-document.body.appendChild(this.canvas);
-
-setInterval(()=>{
-      this.counter++;
-      let cols = ["red","green","blue","white","black","pink","yellow"];
-      this.ctx.fillStyle = cols[Math.floor(cols.length*Math.random())];
-      this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
-
-      const favicon = document.getElementById("favicon1");
-      favicon.setAttribute("href", this.canvas.toDataURL('image/png'));  
-},200);
-
